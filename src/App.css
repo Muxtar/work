@@ -1,38 +1,245 @@
-.App {
-  text-align: center;
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  font-family: Arial, Helvetica, sans-serif;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+html, body, div#root {
+  height: 100%;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+div.main {
+  height: 100%;
   display: flex;
-  flex-direction: column;
+  background-color: rgb(245, 245, 245);
+}
+div.main nav {
+  position: relative;
+  height: 100%;
+  flex-basis: 25%;
+  background-color: #212121;
+  background-color: black;
+}
+div.main nav > ul {
+  list-style-type: none;
+  overflow: scroll;
+  height: 84%;
+}
+div.main nav > ul li {
+  padding: 2px 5px;
+  margin: 5px;
+}
+div.main nav > ul li a {
+  display: flex;
   align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
+  text-decoration: none;
+  padding: 10px;
+  border-radius: 10px;
+}
+div.main nav > ul li a div.left {
+  flex-basis: 15%;
+  display: flex;
+  align-items: center;
+}
+div.main nav > ul li a div.right {
+  width: 100%;
+  padding-left: 10px;
+}
+div.main nav > ul li a div.right .user-name {
+  color: rgb(245, 245, 245);
+  font-weight: 800;
+  font-size: 17px;
+  flex-grow: 1;
+}
+div.main nav > ul li a div.right .date {
+  color: #aaaaaa;
+  font-size: 15px;
+}
+div.main nav > ul li a div.right .message {
+  color: rgb(150, 150, 150);
+}
+div.main nav > ul li a img {
+  height: 50px;
+  width: 45px;
+  border-radius: 50%;
+}
+div.main nav > ul li a p {
+  padding: 2px;
+}
+div.main nav > ul li > a:hover {
+  background-color: rgb(70, 70, 70);
+}
+div.main nav > ul li > a:hover > * {
+  color: rgb(245, 245, 245);
   color: white;
 }
-
-.App-link {
-  color: #61dafb;
+div.main nav header {
+  display: flex;
+  align-items: center;
+  padding: 10px;
 }
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+div.main nav header button {
+  border: 1px solid black;
+  width: 40px;
+  margin: 10px;
+  padding: 5px 5px;
+  background-color: white;
 }
+div.main nav header button div {
+  width: 90%;
+  margin: 4px auto;
+  border: 1px solid black;
+}
+div.main nav header form {
+  position: relative;
+  width: 100%;
+}
+div.main nav header form input {
+  padding: 10px;
+  width: 100%;
+  border-radius: 10px;
+  border: 1px solid rgb(150, 150, 150);
+  border: 1px solid rgb(70, 70, 70);
+  background-color: #181818;
+  padding-left: 40px;
+  color: rgb(245, 245, 245);
+}
+div.main nav header form ::-moz-placeholder {
+  font-size: 16px;
+}
+div.main nav header form :-ms-input-placeholder {
+  font-size: 16px;
+}
+div.main nav header form ::placeholder {
+  font-size: 16px;
+}
+div.main nav header form i {
+  position: absolute;
+  left: 15px;
+  top: 10px;
+  font-size: 15px;
+  color: rgb(150, 150, 150);
+}
+div.main nav footer {
+  border-top: 1px solid #212121;
+  padding: 10px;
+  position: absolute;
+  width: 100%;
+  bottom: 0;
+  background-color: #181818;
+}
+div.main nav footer ul {
+  display: flex;
+  list-style-type: none;
+}
+div.main nav footer ul li {
+  flex-basis: 33.3%;
+  text-align: center;
+}
+div.main nav footer ul li a {
+  display: block;
+  padding: 10px;
+}
+div.main nav footer ul li a i {
+  font-size: 20px;
+  color: rgb(245, 245, 245);
+}
+div.main div.base {
+  flex-basis: 75%;
+  background-image: url("images/image_chat.webp");
+  position: relative;
+}
+div.main div.base div.in-base {
+  overflow: scroll;
+  position: absolute;
+  z-index: 1;
+  height: 100%;
+  width: 100%;
+  background-color: rgba(10, 10, 10, 0.5);
+  background-image: linear-gradient(to right, rgba(40, 10, 50, 0.5), rgba(0, 10, 60, 0.5));
+}
+div.main div.base div.in-base div.chat {
+  height: 100%;
+  width: 100%;
+}
+div.main div.base div.in-base div.chat div.messages {
+  height: 92%;
+  overflow: scroll;
+}
+div.main div.base div.in-base div.chat div.input-chat {
+  width: 100%;
+  height: 30%;
+  height: -webkit-max-content;
+  height: -moz-max-content;
+  height: max-content;
+  position: absolute;
+  bottom: 0;
+}
+div.main div.base div.in-base div.chat div.input-chat form {
+  width: 100%;
+  padding: 10px 30px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding-bottom: 40px;
+}
+div.main div.base div.in-base div.chat div.input-chat form textarea {
+  width: 80%;
+  padding: 10px;
+  border-radius: 10px;
+  background-color: #212121;
+  color: rgb(245, 245, 245);
+  font-size: 16px;
+  outline: none;
+  height: -webkit-max-content;
+  height: -moz-max-content;
+  height: max-content;
+  overflow: hidden;
+  resize: none;
+  height: 45px;
+}
+div.main div.base div.in-base div.chat div.input-chat form textarea ::-moz-placeholder {
+  color: rgb(245, 245, 245);
+}
+div.main div.base div.in-base div.chat div.input-chat form textarea :-ms-input-placeholder {
+  color: rgb(245, 245, 245);
+}
+div.main div.base div.in-base div.chat div.input-chat form textarea ::placeholder {
+  color: rgb(245, 245, 245);
+}
+div.main div.base div.in-base div.chat div.input-chat form i {
+  color: rgb(245, 245, 245);
+  font-size: 40px;
+  padding: 10px;
+  cursor: pointer;
+}
+div.main div.base div.in-base div.chat div.input-chat form i:hover {
+  color: rgb(60, 60, 161);
+}
+div.main div.base div.in-base header {
+  display: flex;
+  justify-content: center;
+  padding: 10px;
+}
+div.main div.base div.in-base header form {
+  display: flex;
+  justify-content: center;
+  width: 80%;
+  position: relative;
+}
+div.main div.base div.in-base header form input {
+  display: block;
+  padding: 15px;
+  flex-basis: 100%;
+  border-radius: 5px;
+  border: none;
+  background-color: #212121;
+}
+div.main div.base div.in-base header form i {
+  position: absolute;
+  right: 10px;
+  top: 10px;
+  font-size: 18px;
+  color: rgb(245, 245, 245);
+}/*# sourceMappingURL=App.css.map */
